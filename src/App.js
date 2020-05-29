@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import logo from "./logo.svg";
-import "./App.css";
+import routes from "./routes";
+import "./reset.scss";
+import "./App.scss";
 
 const App = () => {
   const [continueComp, setContinueComp] = useState(null);
@@ -27,7 +30,17 @@ const App = () => {
       </header>
     </div>
   );
-  const finished = <div className="App"></div>;
+  const finished = (
+    <div className="App">
+      <p className="not-supported">
+        This device is not supported. A screen width of at least 220 pixels is
+        required. If you somehow have a device that is this small, contact me
+        and I will attempt to make my site support the thing. Contact me at
+        (801) 558-7870
+      </p>
+      <Router>{routes}</Router>
+    </div>
+  );
 
   return continueComp ? continueComp : construction;
 };

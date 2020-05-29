@@ -1,0 +1,9 @@
+@import "./../../variables";
+
+#home-page {
+  min-height: 100vh;
+  background-color: $blue;
+  img {
+    max-width: 100vw;
+  }
+}

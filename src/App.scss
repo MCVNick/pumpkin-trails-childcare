@@ -1,0 +1,131 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//my area
+@import "./variables";
+
+html {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+.App {
+  color: $frost;
+  min-height: 100vh;
+
+  .not-supported {
+    display: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  #routes-nav-header-footer {
+    min-height: 100vh;
+
+    > div {
+      min-height: 100vh;
+    }
+  }
+
+  // #home-page,
+  // #about-page,
+  // #contact-page {
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   margin-bottom: 100px;
+  // }
+
+  .fade-appear,
+  .fade-enter {
+    opacity: 0;
+  }
+
+  .fade-appear-active,
+  .fade-enter,
+  .fade-enter-active {
+    opacity: 1;
+    transition: all 300ms linear 150ms;
+    z-index: 1;
+  }
+
+  .fade-exit {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .fade-exit,
+  .fade-exit-active {
+    opacity: 0;
+    transition: all 150ms linear;
+  }
+}
+
+@media (max-width: 219px) {
+  .App {
+    overflow: hidden;
+
+    .not-supported {
+      display: initial;
+    }
+    .not-supported {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+    }
+
+    #routes-nav-header-footer {
+      display: none;
+    }
+  }
+}
