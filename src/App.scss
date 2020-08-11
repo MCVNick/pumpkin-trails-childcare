@@ -52,7 +52,6 @@ html {
 
 .App {
   color: $frost;
-  min-height: 100vh;
 
   .not-supported {
     display: none;
@@ -61,14 +60,6 @@ html {
   a {
     color: inherit;
     text-decoration: inherit;
-  }
-
-  #routes-nav-header-footer {
-    min-height: 100vh;
-
-    > div {
-      min-height: 100vh;
-    }
   }
 
   // #home-page,

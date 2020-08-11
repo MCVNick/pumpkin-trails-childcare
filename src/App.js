@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import logo from "./logo.svg";
 import routes from "./routes";
@@ -7,6 +7,12 @@ import "./App.scss";
 
 const App = () => {
   const [continueComp, setContinueComp] = useState(null);
+
+  // useEffect(() => {
+  //   setContinueComp(finished);
+  //   // eslint-disable-next-line
+  // }, []);
+
   const construction = (
     <div className="App">
       <header className="App-header">

@@ -3,5 +3,7 @@ $frost: #c0c0c0;
 
 $orange: #f8bc4d;
 $blue: #507590;
+$light-blue: lighten($blue, 15%);
+$dark-blue: darken($blue, 15%);
 $snow: #ffffff;
 $charcoal: #101010;

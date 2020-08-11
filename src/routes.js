@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Switch, Route } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
+import Navbar from './Components/Navbar/Navbar'
 import Fallback from "./pages/Fallback/Fallback";
 const Home = lazy(() => import("./pages/Home/Home"));
 // const About = lazy(() => import("./pages/About/About"));
@@ -9,13 +10,13 @@ const Home = lazy(() => import("./pages/Home/Home"));
 
 export default (
   <div id="routes-nav-header-footer">
-    {/* <Navbar />
-    <Footer /> */}
+    <Navbar />
+    {/* <Footer /> */}
     <Route
       render={({ location }) => (
         <TransitionGroup>
           <CSSTransition key={location.key} timeout={300} classNames="fade">
-            <Suspense fallback={Fallback}>
+            <Suspense fallback={<Fallback />}>
               <Switch location={location}>
                 <Route exact path="/" component={Home} />
                 {/* <Route exact path="/Home" component={Home} />
