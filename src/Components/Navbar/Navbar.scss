@@ -28,7 +28,7 @@
       top: 0;
       height: 100%;
       height: 100%;
-      margin: 0 16px;
+      padding: 0 16px;
       z-index: 1;
       &:hover {
         cursor: pointer;
@@ -40,10 +40,32 @@
       flex-direction: row;
       justify-content: center;
       > li {
-        margin: 16px;
+        padding: 16px;
         color: $orange;
         font-weight: bold;
         font-size: 24px;
+        transition: background-color .5s ease;
+      }
+
+      > .selected {
+        background-color: $light-blue;
+      }
+    }
+  }
+  > .user-navbar-choices {
+    background-color: $dark-blue;
+    position: relative;
+    padding: 0 25%;
+
+    > ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      > li {
+        padding: 8px 16px;
+        color: $orange;
+        font-weight: bold;
+        font-size: 16px;
       }
     }
   }
@@ -60,6 +82,21 @@
         transform: translateY(0);
         bottom: inherit;
         left: inherit;
+      }
+    }
+  }
+}
+
+@media (max-width: 785px) {
+  #main-navbar {
+    > .navbar-choices {
+      > img {
+        display: none;
+      }
+    }
+    > .user-navbar-choices {
+      > ul {
+        justify-content: center;
       }
     }
   }

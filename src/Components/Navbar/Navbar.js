@@ -6,23 +6,28 @@ import pumpkin from "./../../resources/branding/pumpkin.png";
 import "./Navbar.scss";
 
 const Navbar = (props) => {
+  const { push, location } = props.history;
+  const { pathname } = location;
+
   return (
     <nav id="main-navbar">
+      <div className="user-navbar-choices">
+        <ul>
+          <li>Login</li>
+          <li>Register</li>
+        </ul>
+      </div>
       <div className="img-container">
-        <img src={cover} alt="Children holding hands with logo off to left." />
+        <img draggable={false} src={cover} alt="Children holding hands with logo off to left." />
       </div>
       <div className="navbar-choices">
-        <img
-          src={pumpkin}
-          alt="pumpkin logo"
-          onClick={() => console.log(props.history.push("/"))}
-        />
+        <img draggable={false} src={pumpkin} alt="pumpkin logo" onClick={() => push("/")} />
         <ul>
-          <li>
+          <li className={pathname === "/" ? "selected" : ""}>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/Contact">Contact</Link>
+          <li className={pathname === "/contact" ? "selected" : ""}>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </div>

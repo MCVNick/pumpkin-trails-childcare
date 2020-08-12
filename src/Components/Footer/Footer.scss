@@ -1,0 +1,9 @@
+@import "./../../variables";
+
+#footer {
+  background-color: $dark-blue;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: -100px;
+}

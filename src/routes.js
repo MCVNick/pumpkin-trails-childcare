@@ -2,16 +2,15 @@ import React, { Suspense, lazy } from "react";
 import { Switch, Route } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-import Navbar from './Components/Navbar/Navbar'
+import Navbar from "./Components/Navbar/Navbar";
 import Fallback from "./pages/Fallback/Fallback";
 const Home = lazy(() => import("./pages/Home/Home"));
 // const About = lazy(() => import("./pages/About/About"));
 // const Contact = lazy(() => import("./pages/Contact/Contact"));
 
 export default (
-  <div id="routes-nav-header-footer">
+  <div id="routes-nav-header">
     <Navbar />
-    {/* <Footer /> */}
     <Route
       render={({ location }) => (
         <TransitionGroup>
@@ -21,7 +20,7 @@ export default (
                 <Route exact path="/" component={Home} />
                 {/* <Route exact path="/Home" component={Home} />
                 <Route exact path="/About" component={About} />
-                <Route exact path="/Contact" component={Contact} /> */}
+              <Route exact path="/Contact" component={Contact} /> */}
                 {/* TODO: make 404 page */}
                 <Route component={Home} />
               </Switch>
